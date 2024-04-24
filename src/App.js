@@ -16,7 +16,7 @@ function App() {
         parameter: null
       };
 
-      const inputResponseBody = await axios.post('http://localhost:8081/add', inputRequestBody);
+      const inputResponseBody = await axios.post('http://inputservice-service:8080/add', inputRequestBody);
       console.log('inputResponseBody:', inputResponseBody);
 
       const outputRequestBody = {
@@ -32,7 +32,7 @@ function App() {
         if (Date.now() - startTime > timeout) {
           throw new Error('Polling timeout');
         }
-        const outputResponseBody = await axios.post(`http://localhost:8082/retrieve`, outputRequestBody);
+        const outputResponseBody = await axios.post(`http://outputservice-service:8081/retrieve`, outputRequestBody);
         console.log('outputResponseBody:', outputResponseBody);
 
         if (outputResponseBody.data.result) {
