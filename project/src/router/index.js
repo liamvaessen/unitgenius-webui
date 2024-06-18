@@ -29,17 +29,17 @@ const router = createRouter({
     },
     {
       path: '/signin',
-      name: 'SignIn',
+      name: 'signin',
       component: SignIn
     },
     {
       path: '/signup',
-      name: 'SignUp',
+      name: 'signup',
       component: SignUp
     },
     {
       path: '/account',
-      name: 'UserAccount',
+      name: 'account',
       component: UserAccount
     },
     // Catch-all route
